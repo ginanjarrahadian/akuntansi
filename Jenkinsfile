@@ -27,6 +27,7 @@ pipeline {
                             myapp.push("${env.BUILD_ID}")
                     }
                 }
+			}
         }    
         stage('Deploy to GKE') {
             steps{
@@ -35,5 +36,4 @@ pipeline {
             }
         }
     }    
-}
 }
