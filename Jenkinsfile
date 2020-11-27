@@ -27,7 +27,7 @@ pipeline {
                             myapp.push("${env.BUILD_ID}")
                     }
                 }
-            
+        }    
         stage('Deploy to GKE') {
             steps{
                 sh "sed -i 's/ginanjaarrr/akuntansi:latest/akuntansi:${env.BUILD_ID}/g' deployment.yaml"
