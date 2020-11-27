@@ -38,7 +38,7 @@
 <div class="center">
 	<h1>
 		<i class="ace-icon fa fa-eye green"></i>
-		<span class="white">Akuntan</span><span class="red"> App</span>
+		<span class="white">Akuntansi</span><span class="red"> App</span>
 	</h1>
 </div>
 <div class="space-6"></div>
