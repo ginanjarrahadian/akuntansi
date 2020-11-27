@@ -1,0 +1,40 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: akuntansi
+  labels:
+    app: akuntansi
+  annotations:
+    monitoring: 'true'
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: akuntansi
+  template:
+    metadata:
+      labels:
+        app: akuntansi
+    spec:
+      containers:
+        - env:
+            - name: WHATEVER_ENV
+              value: WHATEVER_VALUE
+          image: ginanjaarrr/akuntansi
+          imagePullPolicy: Always
+          name: akuntansi
+          ports:
+            - containerPort: 80
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: akuntansi-service
+spec:
+  selector:
+    app: akuntansi
+  ports:
+    - port: 80
+      targetPort: 80
+  type: LoadBalancer
